@@ -42,7 +42,14 @@ const Gallery = () => {
     <section className="image-container">
       {response.map((item) => {
         const url = item?.urls?.regular;
-        return <img src={url} key={item.id} alt={item.alt_description} />;
+        return (
+          <img
+            src={url}
+            key={item.id}
+            alt={item.alt_description}
+            className="img"
+          />
+        );
       })}
     </section>
   );
