@@ -1,14 +1,16 @@
 import React from "react";
 import { toast } from "react-toastify";
+import { useGlobalContext } from "./context";
 
 const SearchForm = () => {
+  const { setSearchTerm } = useGlobalContext();
   const handleSubmit = (e) => {
     e.preventDefault();
     const searchVal = e.target.elements.search.value;
     if (!searchVal) {
       return toast.error("Please provide input");
     }
-    console.log(searchVal);
+    setSearchTerm(searchVal);
   };
 
   return (
